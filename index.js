@@ -20,25 +20,48 @@ console.log(degrees2meters(x,y))
 
 
 function displayResults(data){
-    console.log("displayResults function initiated")
-    console.log(data)
+    
+    //Clears out previous results when user makes new search
+    $('#results-section').empty();
+
+    let cityValue= $("#input-city").val();
+    let stateValue= $("#input-state").val();
+    sortValue= $("input[name=sort]:checked").val();
 
     $('#results-section').removeClass('hidden');
 
+    console.log("displayResults function initiated");
 
-    //for loop through trails object
-    //dataOutput = [];
+    console.log(data);
 
-    //dataOutput.push()
-    //push individuals items to app
+    dataOutput = [];    
 
-
-
-   $('#results-section').append(
-
+    //for loop through data object to get properties of trail and push to HTML
+    for (let i = 0; i < data.trails.length; i++){
+            dataOutput.push(
+            `  <div class="results-hiking-element">
+                Trail Name: ${data.trails[i].name}<br>
+                <img src=${data.trails[i].imgSmallMed} alt="Trail-Photo"><br>
+                Summary: ${data.trails[i].summary}<br>
+                Trail Elevation: ${data.trails[i].ascent} ft <br>
+                Trail Distance: ${data.trails[i].length} miles <br>
+                Trail Location: ${data.trails[i].location}<br>
+                Trail Rating: ${data.trails[i].stars} stars<br><br>
+            </div>
+            ` 
+            );
+        };
 
     
-   )
+    /*if(sortValue== "rating"){
+        dataOutput.sort((a,b) => (a.data.trails.stars)
+    }
+    */
+
+    //push hiking data results to app
+    $('#results-section').append(`<h3>Results for ${cityValue},${stateValue}🏕️:<br>${data.trails.length} total hiking trails found</h3>`);
+
+    $('#results-section').append(dataOutput);
 
 }
 
@@ -53,21 +76,22 @@ function formatQueryParams(params) {
 //function to get data from Hiking Project API
 function getResultsHike(geoCodeData, searchValue, sortValue){
 
-    console.log("getResultsHike function initiated")
+    console.log("getResultsHike function initiated");
 
-    let latitude = geoCodeData.results[0].geometry.location.lat
-
-    let longitude = geoCodeData.results[0].geometry.location.lng
+    let latitude = geoCodeData.results[0].geometry.location.lat;
+    let longitude = geoCodeData.results[0].geometry.location.lng;
+    searchValue= $("#search-distance").val();
+    sortValue= $("input[name=sort]:checked").val();
 
     console.log(latitude + " latitude")
     console.log(longitude + " longitude")
-
 
     baseURL= 'https://www.hikingproject.com/data/get-trails'
     apiKey= '200958935-abaae354b1d3cf74fb6a5086bfdc19c6'
    
      const params = {
       maxDistance: searchValue,
+      maxResults: 20,
       sort: sortValue,
       lat: latitude,
       lon: longitude,
@@ -77,6 +101,11 @@ function getResultsHike(geoCodeData, searchValue, sortValue){
     const queryString = formatQueryParams(params)
     const stringedURL = baseURL + '?' + queryString;
 
+    console.log(stringedURL);
+    console.log(searchValue);
+    console.log(sortValue);
+
+    
     fetch(stringedURL)
         .then(response => response.json())
         .then(data=> displayResults(data))
@@ -125,6 +154,7 @@ function watchForm(){
     getResultsGeoCode(cityValue,stateValue);
 
     getResultsHike(sortValue,searchValue);
+    
     });
 }
 

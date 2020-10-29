@@ -26,6 +26,12 @@ body{
 
 }
 
+.div-hiking-element{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 13px;
+}
+
+
 /*Header Rules*/
 h1, h2, h3{
     text-align: center;
@@ -35,6 +41,7 @@ h1, h2, h3{
 
 p{
     text-align: center;
+    font-weight: bold;
 }
 
 form{
