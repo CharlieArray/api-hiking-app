@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hiking App</title>
+    <link rel="stylesheet" href="index.css" type="text/css">
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+    crossorigin="anonymous"></script>
+</head>
+
+<body>
+   <header id="page-top">
+     <nav>
+       <div class="app-header-outer">
+            <div class="app-header-inner">
+               <a href="#trail-search">Trail Search </a>
+            </div>
+            <div class="app-header-inner">
+              <a href="#widget">Trail Widget</a> 
+            </div>
+        </div>
+      </nav>
+   </header>
+    
+    <h1>Hiking App</h1>
+
+    <h2>App Instructions</h2>
+
+<section id="trail-search">
+    <h3>Search for hiking trails!🍂</h3>
+    <div class="div-standard"> 
+        <form action="#">
+            <label for="input-city">City:</label>
+        <input type="text" name="input-city" id="input-city" placeholder="🏘️">
+            <br>
+            <label for="input-state">State:</label>
+        <input type="text" name="input-state" id="input-state" placeholder="⛰️">
+            <br>
+            <label for="search-distance">Search for trails within (miles):</label><br>
+        <input type="number" name='search-distance' id="search-distance" max="200" value="10" >
+            <br>
+            <label for="radio">Sort By:</label>
+        <input type="radio" name="sort" id="sort" value="distance">
+            <label for="distance">Distance</label>
+        <input type="radio" name="sort" id="sort" value="rating">
+            <label for="rating">Hiking Rating</label>     
+        <input type="submit" name="submit-button" id="submit-button" value="Search">
+        </form>
+    </div>
+
+</section>
+
+
+<section id="widget">
+    <h3>Trail Widget</h3>
+        <iframe style="width:100%; max-width:700px; height:950px; flex-direction: column;" frameborder="0" scrolling="no" 
+        src="https://www.hikingproject.com/widget?v=3&map=1&type=trail&id=7036285&x=-1920099&y=4865450&z=6"></iframe>
+    </div>
+</section>
+
+
+<section class="results-section hidden" id="results-section">
+    <div class="div-standard" id="results-div">
+        <p>results section visible</p>
+    </div>
+
+</section>
+
+
+    <footer>
+        <nav>
+            <div class="app-header-outer">
+                <div class="app-header-inner">
+                    <a href="#page-top">Top of App</a> 
+                  </div>
+                 <div class="app-header-inner">
+                    <a href="#trail-search">Trail Search </a>
+                 </div>
+                 <div class="app-header-inner">
+                   <a href="#widget">Trail Widget</a> 
+                 </div>
+             </div>
+           </nav>
+    </footer>
+
+
+    <script src="index.js"></script>
+</body>
+</html>
