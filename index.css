@@ -1,42 +1,56 @@
 body{
-    max-width: 700px;
-    min-width: 300px;
+    min-width: 360px;
+    margin-left: 8%;
+    margin-right: 8%;
+    background-image: url("images/leaves-vert.jpeg");
 }
 
 /*Rules for Header Flexbox*/
 .app-header-outer{
     display: flex;
+    font-family: 'Architects Daughter', cursive;    
+    background-color: #8bed7e;    
     flex-direction: row;
     justify-content: space-around;
+    border: 1px solid darkgray
 }
 
-/*Rules for Header >> Inner Elements*/
-.app-header-inner{
-    border: 1px solid lightskyblue
-}
+
 
 /*Section ID for Trail Input Section*/
 #trail-search{
-    border: thick double #32a1ce;
+    background-color: #8bed7e;
+    opacity: .85;
+    border: 1px solid black
 }
 
 /*CSS Rule for Standard Divs*/
 .div-standard{
-    border: 2px, solid, green;
+    border: 2px, solid, #8bed7e;
 
 }
 
 /*CSS Rules for Appended Results*/
 .results-hiking-element{
-    margin-left: 2%;
-    margin-right: 2%;
+    background-color: #8bed7e;
+    opacity: .88;
+    margin-left: 4%;
+    margin-right: 4%;
     font-family: Arial, Helvetica, sans-serif;
-    font-size: 12px;
+    font-size: 13px;
+    font-weight: 500;
 }
 
 .results-section{
-    border: thick double #32a1ce;
-    line-height: 19px;
+    background-color: #8bed7e;
+    border: 2px, solid, black;
+    opacity: .88;
+    line-height: 17px;
+}
+
+#widget{
+    background-color: #8bed7e;
+        opacity: .8;
 }
 
 img{
@@ -46,9 +60,12 @@ img{
 /*Header Rules*/
 h1, h2, h3{
     text-align: center;
-    font-family: Arial, Helvetica, sans-serif;
-}
+    padding-top: 6px;
+    font-family: 'Ubuntu', sans-serif;}
 
+h1{
+    font-size: 32px;
+}
 
 p{
     text-align: center;
@@ -56,13 +73,24 @@ p{
 }
 
 form{
+    display: block;
+    text-align: center;
+    margin-left: 7%;
+    margin-right: 7%;
     line-height: 30px;
+    margin-bottom: 5%;
 }
 
 label{
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Open Sans', sans-serif;
 }
 
+
+/* psuedo classes style rules for hyperlinks*/
+a:link    { color: black;  }
+a:visited { color:   black;   }
+a:hover   { color:  purple; }
+a:active  { color:  black; }
 
 .hidden{
     display: none;

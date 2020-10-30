@@ -39,8 +39,11 @@ function displayResults(data){
             }
         };
 
+    //if you want to sort through the data, need to push it to outputArray without template literal format
+
+
     //Append hiking data results to App HTML
-    $('#results-section').append(`<h3>Results for ${cityValue},${stateValue}🏕️:<br>${dataOutput.length} total hiking trails found</h3>`);
+    $('#results-section').append(`<h3>Results for ${cityValue}, ${stateValue}🏕️:<br>${dataOutput.length} total hiking trails found</h3>`);
 
     $('#results-section').append(dataOutput);
 
@@ -85,13 +88,14 @@ function getResultsHike(geoCodeData, searchValue, sortValue){
     console.log(yValue);
 
 
+
     function getWidgetData(xValue,yValue){
         console.log("getWidgetData function initated")
         console.log(latitude);
         console.log(longitude);  
         }
         
-        getWidgetData(xValue, yValue);
+    getWidgetData(xValue, yValue);
 
     baseURL= 'https://www.hikingproject.com/data/get-trails'
     apiKey= '200958935-abaae354b1d3cf74fb6a5086bfdc19c6'
