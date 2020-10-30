@@ -1,24 +1,4 @@
 
-
-
-/*  Widget calculation feature
-var degrees2meters = function(lon,lat) {
-    var x = lon * 20037508.34 / 180;
-    var y = Math.log(Math.tan((90 + lat) * Math.PI / 360)) / (Math.PI / 180);
-    y = y * 20037508.34 / 180;
-    return [x, y]
-}
-
-x= -97.74306
-y = 30.26715
-
-console.log(degrees2meters(x,y))
-
-// should result in: -10880707.67, 3537935.91
-*/
-
-
-
 function displayResults(data){
     
     //Clears out previous results when user makes new search
@@ -34,34 +14,38 @@ function displayResults(data){
 
     console.log(data);
 
-    dataOutput = [];    
+    dataOutput = [];
+    dataOutputNoPics = [] 
 
     //for loop through data object to get properties of trail and push to HTML
     for (let i = 0; i < data.trails.length; i++){
+        //if statement to prevent pushing data with no trail photo or very short trails
+        if(data.trails[i].imgSmallMed.length !== 0 && data.trails[i].length > 0.3){
             dataOutput.push(
             `  <div class="results-hiking-element">
-                Trail Name: ${data.trails[i].name}<br>
+                <b>Trail Name</b>: ${data.trails[i].name}<br>
                 <img src=${data.trails[i].imgSmallMed} alt="Trail-Photo"><br>
-                Summary: ${data.trails[i].summary}<br>
-                Trail Elevation: ${data.trails[i].ascent} ft <br>
-                Trail Distance: ${data.trails[i].length} miles <br>
-                Trail Location: ${data.trails[i].location}<br>
-                Trail Rating: ${data.trails[i].stars} stars<br><br>
+                <b>Summary</b>📜: ${data.trails[i].summary}<br>
+                <b>Trail Elevation</b>⛰️: ${data.trails[i].ascent} ft <br>
+                <b>Trail Length</b>⏳: ${data.trails[i].length} miles <br>
+                <b>Location</b>📍: ${data.trails[i].location}<br>
+                <b>Rating</b>⭐⭐⭐: ${data.trails[i].stars} stars<br>
+                <button type="button" id="widget-button">See Trail Map 🧭</button>
+                <span class="trail-id hidden">${data.trails[i].id}</span>
+                <br><br>
             </div>
             ` 
             );
+            }
         };
 
-    
-    /*if(sortValue== "rating"){
-        dataOutput.sort((a,b) => (a.data.trails.stars)
-    }
-    */
-
-    //push hiking data results to app
-    $('#results-section').append(`<h3>Results for ${cityValue},${stateValue}🏕️:<br>${data.trails.length} total hiking trails found</h3>`);
+    //Append hiking data results to App HTML
+    $('#results-section').append(`<h3>Results for ${cityValue},${stateValue}🏕️:<br>${dataOutput.length} total hiking trails found</h3>`);
 
     $('#results-section').append(dataOutput);
+
+    //Event Listner Function for button click on widget-button
+    watchForTrailWidget();
 
 }
 
@@ -73,11 +57,18 @@ function formatQueryParams(params) {
   }
 
 
-//function to get data from Hiking Project API
-function getResultsHike(geoCodeData, searchValue, sortValue){
+//Function for Hiking Widget
+function getWidgetData(xValue, yValue){
+    console.log(xValue);
+    console.log(yValue);  
+}
 
+
+//Function to get data from Hiking Project API
+function getResultsHike(geoCodeData, searchValue, sortValue){
     console.log("getResultsHike function initiated");
 
+    //Define variables
     let latitude = geoCodeData.results[0].geometry.location.lat;
     let longitude = geoCodeData.results[0].geometry.location.lng;
     searchValue= $("#search-distance").val();
@@ -85,6 +76,22 @@ function getResultsHike(geoCodeData, searchValue, sortValue){
 
     console.log(latitude + " latitude")
     console.log(longitude + " longitude")
+
+    // Formula to convert lat long to mercator for widget app
+    let xValue = longitude * 20037508.34 / 180;
+    let yValue = Math.log(Math.tan((90 + latitude) * Math.PI / 360)) / (Math.PI / 180);
+    yValue = yValue * 20037508.34 / 180;
+    console.log(xValue);
+    console.log(yValue);
+
+
+    function getWidgetData(xValue,yValue){
+        console.log("getWidgetData function initated")
+        console.log(latitude);
+        console.log(longitude);  
+        }
+        
+        getWidgetData(xValue, yValue);
 
     baseURL= 'https://www.hikingproject.com/data/get-trails'
     apiKey= '200958935-abaae354b1d3cf74fb6a5086bfdc19c6'
@@ -101,11 +108,6 @@ function getResultsHike(geoCodeData, searchValue, sortValue){
     const queryString = formatQueryParams(params)
     const stringedURL = baseURL + '?' + queryString;
 
-    console.log(stringedURL);
-    console.log(searchValue);
-    console.log(sortValue);
-
-    
     fetch(stringedURL)
         .then(response => response.json())
         .then(data=> displayResults(data))
@@ -136,6 +138,15 @@ function getResultsGeoCode(cityValue, stateValue){
 }
 
 
+function watchForTrailWidget(){
+    console.log("watchTrail function ran")
+    $('#widget-button').on('click', event=>{
+        event.preventDefault();
+        console.log("map widget clicked");
+    });
+}
+
+
 function watchForm(){
     $('#submit-button').on('click', event=>{
     event.preventDefault();
@@ -154,7 +165,9 @@ function watchForm(){
     getResultsGeoCode(cityValue,stateValue);
 
     getResultsHike(sortValue,searchValue);
-    
+
+    getWidgetData(xValue, yValue)
+
     });
 }
 
