@@ -10,7 +10,7 @@ function displayResults(data){
 
     $('#results-section').removeClass('hidden');
 
-    console.log("displayResults function initiated");
+    //console.log("displayResults function initiated");
 
     console.log(data);
 
@@ -62,37 +62,36 @@ function formatQueryParams(params) {
 
 //Function for Hiking Widget
 function getWidgetData(xValue, yValue){
-    console.log(xValue);
-    console.log(yValue);  
+    //console.log(xValue);
+    //console.log(yValue);  
 }
 
 
 //Function to get data from Hiking Project API
 function getResultsHike(geoCodeData, searchValue, sortValue){
-    console.log("getResultsHike function initiated");
+    //console.log("getResultsHike function initiated");
+
+    console.log(geoCodeData);
 
     //Define variables
-    let latitude = geoCodeData.results[0].geometry.location.lat;
-    let longitude = geoCodeData.results[0].geometry.location.lng;
+    var latitude = geoCodeData.results[0].geometry.location.lat;
+    var longitude = geoCodeData.results[0].geometry.location.lng;
     searchValue= $("#search-distance").val();
     sortValue= $("input[name=sort]:checked").val();
-
-    console.log(latitude + " latitude")
-    console.log(longitude + " longitude")
 
     // Formula to convert lat long to mercator for widget app
     let xValue = longitude * 20037508.34 / 180;
     let yValue = Math.log(Math.tan((90 + latitude) * Math.PI / 360)) / (Math.PI / 180);
     yValue = yValue * 20037508.34 / 180;
-    console.log(xValue);
-    console.log(yValue);
+    //console.log(xValue);
+    //console.log(yValue);
 
 
 
     function getWidgetData(xValue,yValue){
-        console.log("getWidgetData function initated")
-        console.log(latitude);
-        console.log(longitude);  
+        //console.log("getWidgetData function initated")
+        //console.log(latitude);
+        //console.log(longitude);  
         }
         
     getWidgetData(xValue, yValue);
@@ -121,7 +120,7 @@ function getResultsHike(geoCodeData, searchValue, sortValue){
 
 //Function to retrieve lat/long data from Google Geocode API
 function getResultsGeoCode(cityValue, stateValue){
-    console.log("getResultsGeoCode function initiated")
+    //console.log("getResultsGeoCode function initiated")
 
     baseURL= 'https://maps.googleapis.com/maps/api/geocode/json'
 
@@ -143,7 +142,7 @@ function getResultsGeoCode(cityValue, stateValue){
 
 
 function watchForTrailWidget(){
-    console.log("watchTrail function ran")
+    //console.log("watchTrail function ran")
     $('#widget-button').on('click', event=>{
         event.preventDefault();
         console.log("map widget clicked");
@@ -164,7 +163,7 @@ function watchForm(){
         //sort search option(distance or rating)
         let sortValue= $("input[name=sort]:checked").val();
 
-    console.log("Watch Form function initiated");
+    //console.log("Watch Form function initiated");
 
     getResultsGeoCode(cityValue,stateValue);
 

@@ -8,13 +8,20 @@ body{
 /*Rules for Header Flexbox*/
 .app-header-outer{
     display: flex;
-    font-family: 'Architects Daughter', cursive;    
-    background-color: #8bed7e;    
+    font-family: 'Ubuntu', sans-serif;
+    background-color: whitesmoke;
+    opacity: .8;
     flex-direction: row;
     justify-content: space-around;
-    border: 1px solid darkgray
+    border: 4px solid #8bed7e
 }
 
+/*Rules for Header Inner*/
+.app-header-inner{
+    background-color: whitesmoke;
+    font-size: 16px;
+    opacity: .8;
+}
 
 
 /*Section ID for Trail Input Section*/
@@ -50,7 +57,12 @@ body{
 
 #widget{
     background-color: #8bed7e;
-        opacity: .8;
+    opacity: .8;
+}
+
+#widget-map{
+    margin-left: 5%;
+    margin-right: 5%;
 }
 
 img{
@@ -89,7 +101,7 @@ label{
 /* psuedo classes style rules for hyperlinks*/
 a:link    { color: black;  }
 a:visited { color:   black;   }
-a:hover   { color:  purple; }
+a:hover   { color:  lightsalmon; }
 a:active  { color:  black; }
 
 .hidden{
