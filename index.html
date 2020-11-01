@@ -15,43 +15,37 @@
 </head>
 
 <body>
-   
    <header id="page-top">
    </header>
-
     <br>
-
+    <!--Form Input and Header-->
     <section id="trail-search" class="center">
-       <h1>The Trail Finder⛰️</h1>
-         <h3>A Hiking App to Discover Nearby Trails and Trail Maps!🍂</h3>
-      <div class="div-standard"> 
-        <form action="#">
-            <label for="input-city">City:</label>
-        <input type="text" name="input-city" id="input-city" placeholder="Portland🏘️">
-            <br>
-            <label for="input-state">State:</label>
-        <input type="text" name="input-state" id="input-state" placeholder="Oregon⛰️">
-            <br>
-            <label for="search-distance">Search for trails within (miles):</label><br>
-        <input type="number" name='search-distance' id="search-distance" max="200" value="10" >
-            <br>
-            <!--
-            <label for="radio">Sort By:</label>
-        <input type="radio" name="sort" id="sort" value="distance">
-            <label for="distance">Distance</label>
-        <input type="radio" name="sort" id="sort" value="rating">
-            <label for="rating">Hiking Rating</label> -->
-        <input type="submit" name="submit-button" id="submit-button" value="Search">
-        </form>
-      </div>
-
+          <h1>The Trail Finder⛰️</h1>
+          <h2>A Hiking App to Discover Nearby Trails and Trail Maps!🍂</h2>
+        <div class="div-standard"> 
+            <form action="#">
+                    <label for="input-city">City:</label>
+                <input type="text" name="input-city" id="input-city" placeholder="Portland🏘️">
+                    <br>
+                    <label for="input-state">State:</label>
+                <input type="text" name="input-state" id="input-state" placeholder="Oregon⛰️">
+                    <br>
+                    <label for="search-distance">Search for trails within (miles):</label><br>
+                <input type="number" name='search-distance' id="search-distance" max="200" value="10" >
+                    <br>
+                    <!--
+                    <label for="radio">Sort By:</label>
+                <input type="radio" name="sort" id="sort" value="distance">
+                    <label for="distance">Distance</label>
+                <input type="radio" name="sort" id="sort" value="rating">
+                    <label for="rating">Hiking Rating</label> -->
+                <input type="submit" name="submit-button" id="submit-button" value="Search">
+            </form>
+        </div>
     </section>
- 
-
-  <br>
- 
-    <!--Widget Map gets appended to here from Javascript-->
-    <section class="widget hidden">
+    
+    <!--Widget Map gets appended to here from js file-->
+    <section class="widget class hidden">
         <div>
             <h3>Trail Map 🧭</h3> 
             <p><b>⚠️To view map on mobile, change screen to landscape view</b></p>
@@ -61,16 +55,13 @@
             <div id="widget-map"></div>
         </div>
     </section>
-
   <br>
-
- <!--Hidden Results Until API Get Request-->
- <section class="results-section center hidden" id="results-section">
-    <div class="div-standard" id="results-div">
-       <p>results section visible</p>
-    </div>
- </section>
-
+    <!--Hidden Results Until API Get Request-->
+    <section class="results-section center hidden" id="results-section">
+        <div class="div-standard" id="results-div">
+        <p>results section visible</p>
+        </div>
+    </section>
  <br>
    <footer>
         <nav>
@@ -82,7 +73,6 @@
            </nav>
     </footer>
 <br>
-
-    <script src="index.js"></script>
+  <script src="index.js"></script>
 </body>
 </html>

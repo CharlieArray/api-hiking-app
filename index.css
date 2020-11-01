@@ -27,7 +27,12 @@
         opacity: .8;
     }
 
-
+    .center2 {
+        max-width: 750px;
+        margin: auto;
+        width: 100%;
+        padding: 2px;
+      }
     /*Section ID for Trail Input Section*/
     #trail-search{
         background-color: #8bed7e;
@@ -42,7 +47,7 @@
     }
 
 
-    /*CSS Rules for Appended Results*/
+    /*CSS Rules for Appended Result Elements*/
     .results-hiking-element{
         background-color: #8bed7e;
         opacity: .88;
@@ -53,6 +58,7 @@
         font-weight: 500;
     }
 
+    /*Entire Section holding Appended Results*/
     .results-section{
         background-color: #8bed7e;
         border: 2px, solid, black;
@@ -60,11 +66,13 @@
         line-height: 17px;
     }
 
+    /*Entire Section containing widget*/
     .widget{
         background-color: #8bed7e;
-        opacity: .8;
+        opacity: .90;
     }
 
+    /*div holding widget map*/
     #widget-map{
         padding: 1px;
         margin-left: 1px;
@@ -78,18 +86,24 @@
     /*Header Rules*/
     h1, h2, h3{
         text-align: center;
-        font-family: 'Ubuntu', sans-serif;}
+        font-family: 'Ubuntu', sans-serif;
+        padding: 5px;
+    }
 
     h1{
         font-size: 36px;
-        padding: 5px;
+    }
+
+    h2{
+        font-size: 24px;
+        line-height: 24px;
     }
 
     h3{
-        font-size: 23px;
-        padding: 5px;
+        font-size: 19px;
         line-height: 24px;
     }
+
     p{
         font-family: Arial, sans-serif;
         font-size: 13.2px;
@@ -156,11 +170,10 @@
     }
 
     .center {
-        max-width: 750px;
+        max-width: 700px;
         margin: auto;
         width: 70%;
         padding: 2px;
-      
       }
 
     /*Section ID for Trail Input Section*/
@@ -187,22 +200,26 @@
         font-weight: 500;
     }
 
+    /*Section Element holding Appended Results*/
     .results-section{
         background-color: #8bed7e;
         border: 2px, solid, black;
-        opacity: .88;
+        opacity: .90;
         line-height: 17px;
     }
 
+    /*Entire Section containing widget*/
     .widget{
+        max-width: 1300px;
         background-color: #8bed7e;
-        opacity: .8;
+        opacity: .90;
     }
 
+    /*div holding widget map*/
     #widget-map{
-        padding: 8px;
-        margin-left: 3%;
-        margin-right: 3%;
+        padding: 10px;
+        margin-left: 2%;
+        margin-right: 2%;
     }
 
     img{
@@ -213,18 +230,23 @@
     h1, h2, h3{
         text-align: center;
         font-family: 'Ubuntu', sans-serif;
+        padding: 5px;
     }
 
     h1{
         font-size: 36px;
     }
 
-    h3{
-        font-size: 23px;
-        padding-top: 10px;
-        padding: 15px;
+    h2{
+        font-size: 28px;
         line-height: 24px;
     }
+
+    h3{
+        font-size: 24px;
+        line-height: 24px;
+    }
+
     p{
         font-family: Arial, sans-serif;
         font-size: 13.2px;

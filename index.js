@@ -1,18 +1,15 @@
 
+// Function to display results in HTML //data param is JSON output from getResultsHike();
 function displayResults(data){
     
     //Clears out previous results when user makes new search
     $('#results-section').empty();
-
 
     let cityValue= $("#input-city").val();
     let stateValue= $("#input-state").val();
     sortValue= $("input[name=sort]:checked").val();
 
     $('#results-section').removeClass('hidden');
-
-    //console.log("displayResults function initiated");
-    //console.log(data);
 
     dataOutput = [];
 
@@ -34,15 +31,13 @@ function displayResults(data){
             </div>
             ` 
             );
-            }
-        };
-
+        }
+    };
 
     //Append hiking data results to App HTML
-    $('#results-section').append(`<h3>Results for ${cityValue}, ${stateValue}🏕️:<br>${dataOutput.length} total hiking trails found</h3>`);
+        $('#results-section').append(`<h3>Results for ${cityValue}, ${stateValue}🏕️:<br>${dataOutput.length} total hiking trails found</h3>`);
 
-    $('#results-section').append(dataOutput);
-
+        $('#results-section').append(dataOutput);
 
     //Unhides footer nav at bottom of page
     $('.app-header-outer').removeClass("hidden");
@@ -52,20 +47,17 @@ function displayResults(data){
 
 }
 
+
 //Formating function to get parameters in proper format for fetch request 
-function formatQueryParams(params) {
+function formatQueryParams(params){
     const queryItems = Object.keys(params)
       .map(key => `${encodeURIComponent(key)}=${encodeURIComponent(params[key])}`)
     return queryItems.join('&');
-  }
-
+}
 
 
 //Function to get data from Hiking Project API
 function getResultsHike(geoCodeData, searchValue, sortValue){
-    //console.log("getResultsHike function initiated");
-
-    //console.log(geoCodeData);
 
     //Define variables
     var latitude = geoCodeData.results[0].geometry.location.lat;
@@ -73,24 +65,6 @@ function getResultsHike(geoCodeData, searchValue, sortValue){
     searchValue= $("#search-distance").val();
     sortValue= $("input[name=sort]:checked").val();
 
-
-  /*FUNCTION NOT CURRENTLY NECESSARY, DO NOT REMOVE */
-    function mapConversion(){
-    // Formula to convert lat long to mercator for widget app
-    //let xValue = longitude * 20037508.34 / 180;
-    //let yValue = Math.log(Math.tan((90 + latitude) * Math.PI / 360)) / (Math.PI / 180);
-    //yValue = yValue * 20037508.34 / 180;
-    //console.log(xValue);
-    //console.log(yValue);
-    }
-      /*FUNCTION NOT CURRENTLY NECESSARY, DO NOT REMOVE */
-        function getWidgetData(xValue,yValue){
-        //console.log("getWidgetData function initated")
-        //console.log(latitude);
-        //console.log(longitude);
-    }
-        
-    //Hiking Project API URL and apiKey
     baseURL= 'https://www.hikingproject.com/data/get-trails'
     apiKey= '200958935-abaae354b1d3cf74fb6a5086bfdc19c6'
    
@@ -110,7 +84,6 @@ function getResultsHike(geoCodeData, searchValue, sortValue){
         .then(response => response.json())
         .then(data=> displayResults(data))
         .catch(console.error)
-
 }
 
 
@@ -144,19 +117,19 @@ function displayWidget(targetWidgetID){
     $(".app-header-outer").addClass('hidden');
     $('#widget-map').empty();
 
-    var mq = window.matchMedia( "(max-width: 600px)" );
+    var mq = window.matchMedia( "(max-width: 820px)" );
         if (mq.matches) {
-            // window width is less than 600px
+            // window width is less than 820px
             $('#widget-map').append(
-                `<iframe style="width:100%; max-width:569px; max-height:310px; height:310px; flex-direction: row;" frameborder="0" scrolling="no" 
-                src="https://www.hikingproject.com/widget?v=3&map=1&type=trail&id=${targetWidgetID}&x=-10880707&y=3537936&z=6"></iframe>`
+                `<div class="center2"><iframe style="width:100%; max-width:569px; max-height:420px; height:345px; flex-direction: row;" frameborder="0" scrolling="no" 
+                src="https://www.hikingproject.com/widget?v=3&map=1&type=trail&id=${targetWidgetID}&x=-10880707&y=3537936&z=6"></iframe></div>`
                 );    
         }
         else {
-            // window width is greater than 600px
+            // window width is greater than 820px
             $('#widget-map').append(
-                `<iframe style="width:100%; max-width:610px; max-height:410px; height:950px; flex-direction: row;" frameborder="0" scrolling="no" 
-                src="https://www.hikingproject.com/widget?v=3&map=1&type=trail&id=${targetWidgetID}&x=-10880707&y=3537936&z=6"></iframe>`
+                `<div class="center"><iframe style="width:100%; max-width:810px; max-height:410px; height:750px; flex-direction: row;" frameborder="0" scrolling="no" 
+                src="https://www.hikingproject.com/widget?v=3&map=1&type=trail&id=${targetWidgetID}&x=-10880707&y=3537936&z=6"></iframe></div>`
                 );    
         }
 
@@ -174,6 +147,7 @@ function watchForOtherTrails(){
         $(".app-header-outer").removeClass('hidden');
     });
 }
+
 
 //Event Listener Function for "See Trail Map" 
 function watchForTrailWidget(){
@@ -199,12 +173,13 @@ function alertBanner(){
     $('form').addClass('hidden');
     $('#trail-search').append(`
         <div id="dialog" style="text-align: center;" title="Input Form Information">
-        <p>Oops! Please fill out the City and State to Search📝</p>
-        <button type="button" id="alert-button">Okay 🍃
+        <p>Oops! Please fill out the City and State📝</p>
+        <button type="button" id="alert-button">Okay ✔️
         </button><br><br>
         </div>
         `)
 }
+
 
 // Event Listener function for Alert Banner
 function watchAlertBanner(){
@@ -214,6 +189,7 @@ function watchAlertBanner(){
         $('#dialog').remove();
     });
 }
+
 
 // Event Listener function for Submit Button
 function watchForm(){
