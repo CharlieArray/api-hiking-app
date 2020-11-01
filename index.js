@@ -67,7 +67,7 @@ function formatQueryParams(params) {
 function getResultsHike(geoCodeData, searchValue, sortValue){
     //console.log("getResultsHike function initiated");
 
-    console.log(geoCodeData);
+    //console.log(geoCodeData);
 
     //Define variables
     var latitude = geoCodeData.results[0].geometry.location.lat;
@@ -163,6 +163,8 @@ function displayWidget(targetWidgetID){
     watchForOtherTrails();
 }
 
+
+
 function watchForOtherTrails(){
     $('#other-trails-button').on('click', event=>{
         event.preventDefault();
@@ -186,6 +188,35 @@ function watchForTrailWidget(){
 }
 
 
+// Function to ensure input form submitted correctly
+function formValidate(cityValue,stateValue){
+    if(cityValue == "" || stateValue == ""){
+    alertBanner();
+    }
+}
+
+
+function alertBanner(){
+    $('form').addClass('hidden');
+    $('#trail-search').append(`
+        <div id="dialog" style="text-align: center;" title="Input Form Information">
+        <p>Oops! Please fill out the City and State to Search📝</p>
+        <button type="button" id="alert-button">Okay 🍃
+        </button><br><br>
+        </div>
+        `)
+}
+
+// Event Listener function for Alert Banner
+function watchAlertBanner(){
+    $('#alert-button').on('click', event=>{
+        event.preventDefault();
+        $('form').removeClass('hidden');
+        $('#dialog').remove();
+    });
+}
+
+// Event Listener function for Submit Button
 function watchForm(){
     $('#submit-button').on('click', event=>{
         
@@ -201,7 +232,9 @@ function watchForm(){
         //sort search option(distance or rating)
         let sortValue= $("input[name=sort]:checked").val();
 
-    //console.log("Watch Form function initiated");
+    formValidate(cityValue,stateValue);
+
+    watchAlertBanner();
 
     getResultsGeoCode(cityValue,stateValue);
 
