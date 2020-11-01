@@ -13,7 +13,7 @@ function displayResults(data){
 
     console.log("displayResults function initiated");
 
-    console.log(data);
+    //console.log(data);
 
     dataOutput = [];
     dataOutputNoPics = [] 
@@ -75,22 +75,22 @@ function getResultsHike(geoCodeData, searchValue, sortValue){
     searchValue= $("#search-distance").val();
     sortValue= $("input[name=sort]:checked").val();
 
+    /* CONVERSION NOT CURRENTLY NECESSARY FOR MAP WIDGET APP TO FUNCTION*/
     // Formula to convert lat long to mercator for widget app
-    let xValue = longitude * 20037508.34 / 180;
-    let yValue = Math.log(Math.tan((90 + latitude) * Math.PI / 360)) / (Math.PI / 180);
-    yValue = yValue * 20037508.34 / 180;
+    //let xValue = longitude * 20037508.34 / 180;
+    //let yValue = Math.log(Math.tan((90 + latitude) * Math.PI / 360)) / (Math.PI / 180);
+    //yValue = yValue * 20037508.34 / 180;
     //console.log(xValue);
     //console.log(yValue);
 
-
-
-    function getWidgetData(xValue,yValue){
+    /*function getWidgetData(xValue,yValue){
         //console.log("getWidgetData function initated")
         //console.log(latitude);
-        //console.log(longitude);  
-        }
+        //console.log(longitude);
+    }
+    */
         
-    getWidgetData(xValue, yValue);
+    //getWidgetData(xValue, yValue);
 
     baseURL= 'https://www.hikingproject.com/data/get-trails'
     apiKey= '200958935-abaae354b1d3cf74fb6a5086bfdc19c6'
@@ -139,7 +139,9 @@ function getResultsGeoCode(cityValue, stateValue){
 
 function displayWidget(targetWidgetID){
     $(".widget").removeClass('hidden');
+    $("#trail-search").addClass('hidden');
     $(".results-section").addClass('hidden');
+    $(".app-header-outer").addClass('hidden');
     $('#widget-map').empty();
 
     var mq = window.matchMedia( "(max-width: 600px)" );
@@ -153,7 +155,7 @@ function displayWidget(targetWidgetID){
         else {
             // window width is greater than 600px
             $('#widget-map').append(
-                `<iframe style="width:100%; max-width:650px; max-height:410px; height:950px; flex-direction: row;" frameborder="0" scrolling="no" 
+                `<iframe style="width:100%; max-width:610px; max-height:410px; height:950px; flex-direction: row;" frameborder="0" scrolling="no" 
                 src="https://www.hikingproject.com/widget?v=3&map=1&type=trail&id=${targetWidgetID}&x=-10880707&y=3537936&z=6"></iframe>`
                 );    
         }
@@ -165,7 +167,9 @@ function watchForOtherTrails(){
     $('#other-trails-button').on('click', event=>{
         event.preventDefault();
         $(".widget").addClass('hidden');
+        $("#trail-search").removeClass('hidden');
         $(".results-section").removeClass('hidden');
+        $(".app-header-outer").removeClass('hidden');
     });
 }
 

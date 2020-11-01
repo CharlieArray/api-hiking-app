@@ -32,7 +32,7 @@
     #trail-search{
         background-color: #8bed7e;
         opacity: .85;
-        border: 1px solid black
+        border: 2px solid black
     }
 
     /*CSS Rule for Standard Divs*/
@@ -93,6 +93,10 @@
         font-family: Arial, sans-serif;
         font-size: 13.2px;
         text-align: center;
+    }
+
+    button,input#submit-button{
+    font-size: 15px;
     }
 
     form{
@@ -156,7 +160,7 @@
     #trail-search{
         background-color: #8bed7e;
         opacity: .85;
-        border: 1px solid black
+        border: 2px solid black
     }
 
     /*CSS Rule for Standard Divs*/
