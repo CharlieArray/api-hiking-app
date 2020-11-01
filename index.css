@@ -1,109 +1,251 @@
-body{
-    min-width: 360px;
-    margin-left: 8%;
-    margin-right: 8%;
-    background-image: url("images/leaves-vert.jpeg");
+/*--------CSS Rules for Devices under 600px phones etc--------*/ 
+
+ @media all and (max-width: 670px) {
+
+    body{
+        min-width: 308px;
+        margin-left: 5px;
+        margin-right: 5px;
+        background-image: url("images/leaves-vert.jpeg");
+    }
+
+    /*Rules for Header Flexbox*/
+    .app-header-outer{
+        display: flex;
+        font-family: 'Ubuntu', sans-serif;
+        background-color: whitesmoke;
+        opacity: .8;
+        flex-direction: row;
+        justify-content: space-around;
+        border: 4px solid #8bed7e
+    }
+
+    /*Rules for Header Inner*/
+    .app-header-inner{
+        background-color: whitesmoke;
+        font-size: 16px;
+        opacity: .8;
+    }
+
+
+    /*Section ID for Trail Input Section*/
+    #trail-search{
+        background-color: #8bed7e;
+        opacity: .85;
+        border: 1px solid black
+    }
+
+    /*CSS Rule for Standard Divs*/
+    .div-standard{
+        border: 2px, solid, #8bed7e;
+
+    }
+
+
+    /*CSS Rules for Appended Results*/
+    .results-hiking-element{
+        background-color: #8bed7e;
+        opacity: .88;
+        margin-left: 3%;
+        margin-right: 3%;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 13px;
+        font-weight: 500;
+    }
+
+    .results-section{
+        background-color: #8bed7e;
+        border: 2px, solid, black;
+        opacity: .88;
+        line-height: 17px;
+    }
+
+    .widget{
+        background-color: #8bed7e;
+        opacity: .8;
+    }
+
+    #widget-map{
+        padding: 1px;
+        margin-left: 1px;
+        margin-right: 1px;
+    }
+
+    img{
+        max-width: 285px;
+    }
+
+    /*Header Rules*/
+    h1, h2, h3{
+        text-align: center;
+        font-family: 'Ubuntu', sans-serif;}
+
+    h1{
+        font-size: 36px;
+    }
+
+    h3{
+        font-size: 23px;
+        padding-top: 10px;
+        line-height: 24px;
+    }
+    p{
+        font-family: Arial, sans-serif;
+        font-size: 13.2px;
+        text-align: center;
+    }
+
+    form{
+        display: block;
+        text-align: center;
+        margin-left: 7%;
+        margin-right: 7%;
+        line-height: 30px;
+        margin-bottom: 5%;
+    }
+
+    label{
+        font-family: 'Open Sans', sans-serif;
+    }
+
+
+    /* psuedo classes style rules for hyperlinks*/
+    a:link    { color: black;  }
+    a:visited { color:   black;   }
+    a:hover   { color:  lightsalmon; }
+    a:active  { color:  black; }
+
+    .hidden{
+        display: none;
+    }
+
 }
 
-/*Rules for Header Flexbox*/
-.app-header-outer{
-    display: flex;
-    font-family: 'Ubuntu', sans-serif;
-    background-color: whitesmoke;
-    opacity: .8;
-    flex-direction: row;
-    justify-content: space-around;
-    border: 4px solid #8bed7e
+
+/*-------------------CSS Rules for Devices over 670px------------------------*/ 
+  
+@media all and (min-width: 670px) {
+  
+    body{
+        min-width: 670px;
+        margin-left: 5%;
+        margin-right: 5%;
+        background-image: url("images/leaves-vert.jpeg");
+    }
+
+    /*Rules for Header Flexbox*/
+    .app-header-outer{
+        display: flex;
+        font-family: 'Ubuntu', sans-serif;
+        background-color: whitesmoke;
+        opacity: .8;
+        flex-direction: row;
+        justify-content: space-around;
+        border: 4px solid #8bed7e
+    }
+
+    /*Rules for Header Inner*/
+    .app-header-inner{
+        background-color: whitesmoke;
+        font-size: 16px;
+        opacity: .8;
+    }
+
+
+    /*Section ID for Trail Input Section*/
+    #trail-search{
+        background-color: #8bed7e;
+        opacity: .85;
+        border: 1px solid black
+    }
+
+    /*CSS Rule for Standard Divs*/
+    .div-standard{
+        border: 2px, solid, #8bed7e;
+
+    }
+
+    /*CSS Rules for Appended Results*/
+    .results-hiking-element{
+        background-color: #8bed7e;
+        opacity: .88;
+        margin-left: 4%;
+        margin-right: 4%;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 13px;
+        font-weight: 500;
+    }
+
+    .results-section{
+        background-color: #8bed7e;
+        border: 2px, solid, black;
+        opacity: .88;
+        line-height: 17px;
+    }
+
+    .widget{
+        background-color: #8bed7e;
+        opacity: .8;
+    }
+
+    #widget-map{
+        padding: 8px;
+        margin-left: 3%;
+        margin-right: 3%;
+    }
+
+    img{
+        max-width: 320px;
+    }
+
+    /*Header Rules*/
+    h1, h2, h3{
+        text-align: center;
+        font-family: 'Ubuntu', sans-serif;}
+
+    h1{
+        font-size: 36px;
+    }
+
+    h3{
+        font-size: 23px;
+        padding-top: 10px;
+        line-height: 24px;
+    }
+    p{
+        font-family: Arial, sans-serif;
+        font-size: 13.2px;
+        text-align: center;
+    }
+
+    form{
+        display: block;
+        text-align: center;
+        margin-left: 7%;
+        margin-right: 7%;
+        line-height: 30px;
+        margin-bottom: 5%;
+    }
+
+    label{
+        font-family: 'Open Sans', sans-serif;
+    }
+
+
+    /* psuedo classes style rules for hyperlinks*/
+    a:link    { color: black;  }
+    a:visited { color:   black;   }
+    a:hover   { color:  lightsalmon; }
+    a:active  { color:  black; }
+
+    .hidden{
+        display: none;
+    }
+
 }
 
-/*Rules for Header Inner*/
-.app-header-inner{
-    background-color: whitesmoke;
-    font-size: 16px;
-    opacity: .8;
-}
 
 
-/*Section ID for Trail Input Section*/
-#trail-search{
-    background-color: #8bed7e;
-    opacity: .85;
-    border: 1px solid black
-}
-
-/*CSS Rule for Standard Divs*/
-.div-standard{
-    border: 2px, solid, #8bed7e;
-
-}
-
-/*CSS Rules for Appended Results*/
-.results-hiking-element{
-    background-color: #8bed7e;
-    opacity: .88;
-    margin-left: 4%;
-    margin-right: 4%;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 13px;
-    font-weight: 500;
-}
-
-.results-section{
-    background-color: #8bed7e;
-    border: 2px, solid, black;
-    opacity: .88;
-    line-height: 17px;
-}
-
-#widget{
-    background-color: #8bed7e;
-    opacity: .8;
-}
-
-#widget-map{
-    margin-left: 5%;
-    margin-right: 5%;
-}
-
-img{
-    max-width: 320px;
-}
-
-/*Header Rules*/
-h1, h2, h3{
-    text-align: center;
-    padding-top: 6px;
-    font-family: 'Ubuntu', sans-serif;}
-
-h1{
-    font-size: 32px;
-}
-
-p{
-    text-align: center;
-    font-weight: bold;
-}
-
-form{
-    display: block;
-    text-align: center;
-    margin-left: 7%;
-    margin-right: 7%;
-    line-height: 30px;
-    margin-bottom: 5%;
-}
-
-label{
-    font-family: 'Open Sans', sans-serif;
-}
 
 
-/* psuedo classes style rules for hyperlinks*/
-a:link    { color: black;  }
-a:visited { color:   black;   }
-a:hover   { color:  lightsalmon; }
-a:active  { color:  black; }
 
-.hidden{
-    display: none;
-}

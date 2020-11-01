@@ -4,13 +4,14 @@ function displayResults(data){
     //Clears out previous results when user makes new search
     $('#results-section').empty();
 
+
     let cityValue= $("#input-city").val();
     let stateValue= $("#input-state").val();
     sortValue= $("input[name=sort]:checked").val();
 
     $('#results-section').removeClass('hidden');
 
-    //console.log("displayResults function initiated");
+    console.log("displayResults function initiated");
 
     console.log(data);
 
@@ -30,8 +31,7 @@ function displayResults(data){
                 <b>Trail Length</b>⏳: ${data.trails[i].length} miles <br>
                 <b>Location</b>📍: ${data.trails[i].location}<br>
                 <b>Rating</b>⭐⭐⭐: ${data.trails[i].stars} stars<br>
-                <button type="button" id="widget-button">See Trail Map 🧭</button>
-                <span class="trail-id hidden">${data.trails[i].id}</span>
+                <button type="button" name="widget-button" id="${data.trails[i].id}">See Trail Map 🧭</button>
                 <br><br>
             </div>
             ` 
@@ -39,32 +39,28 @@ function displayResults(data){
             }
         };
 
-    //if you want to sort through the data, need to push it to outputArray without template literal format
-
 
     //Append hiking data results to App HTML
     $('#results-section').append(`<h3>Results for ${cityValue}, ${stateValue}🏕️:<br>${dataOutput.length} total hiking trails found</h3>`);
 
     $('#results-section').append(dataOutput);
 
-    //Event Listner Function for button click on widget-button
+
+    //Unhides footer nav at bottom of page
+    $('.app-header-outer').removeClass("hidden");
+
+    //Event Listener Function for button click on widget-button
     watchForTrailWidget();
 
 }
 
-//formating function to get parameters in proper format for fetch request 
+//Formating function to get parameters in proper format for fetch request 
 function formatQueryParams(params) {
     const queryItems = Object.keys(params)
       .map(key => `${encodeURIComponent(key)}=${encodeURIComponent(params[key])}`)
     return queryItems.join('&');
   }
 
-
-//Function for Hiking Widget
-function getWidgetData(xValue, yValue){
-    //console.log(xValue);
-    //console.log(yValue);  
-}
 
 
 //Function to get data from Hiking Project API
@@ -141,18 +137,56 @@ function getResultsGeoCode(cityValue, stateValue){
 }
 
 
-function watchForTrailWidget(){
-    //console.log("watchTrail function ran")
-    $('#widget-button').on('click', event=>{
+function displayWidget(targetWidgetID){
+    $(".widget").removeClass('hidden');
+    $(".results-section").addClass('hidden');
+    $('#widget-map').empty();
+
+    var mq = window.matchMedia( "(max-width: 600px)" );
+        if (mq.matches) {
+            // window width is less than 600px
+            $('#widget-map').append(
+                `<iframe style="width:100%; max-width:569px; max-height:310px; height:310px; flex-direction: row;" frameborder="0" scrolling="no" 
+                src="https://www.hikingproject.com/widget?v=3&map=1&type=trail&id=${targetWidgetID}&x=-10880707&y=3537936&z=6"></iframe>`
+                );    
+        }
+        else {
+            // window width is greater than 600px
+            $('#widget-map').append(
+                `<iframe style="width:100%; max-width:650px; max-height:410px; height:950px; flex-direction: row;" frameborder="0" scrolling="no" 
+                src="https://www.hikingproject.com/widget?v=3&map=1&type=trail&id=${targetWidgetID}&x=-10880707&y=3537936&z=6"></iframe>`
+                );    
+        }
+
+    watchForOtherTrails();
+}
+
+function watchForOtherTrails(){
+    $('#other-trails-button').on('click', event=>{
         event.preventDefault();
-        console.log("map widget clicked");
+        $(".widget").addClass('hidden');
+        $(".results-section").removeClass('hidden');
+    });
+}
+
+
+function watchForTrailWidget(){
+    //console.log("watchTrail function ran");
+    $("button[name = 'widget-button']").on('click', event=>{
+        event.preventDefault();
+        //console.log("map widget clicked");
+        let targetWidgetID = $(event.target).attr("id")
+        displayWidget(targetWidgetID);
+    
     });
 }
 
 
 function watchForm(){
     $('#submit-button').on('click', event=>{
+        
     event.preventDefault();
+
     //declaring form input values
         //city input value
         let cityValue= $("#input-city").val();
@@ -168,8 +202,6 @@ function watchForm(){
     getResultsGeoCode(cityValue,stateValue);
 
     getResultsHike(sortValue,searchValue);
-
-    getWidgetData(xValue, yValue)
 
     });
 }

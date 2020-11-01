@@ -13,23 +13,14 @@
 <body>
    
    <header id="page-top">
-     <!-- <nav>
-       <div class="app-header-outer">
-            <div class="app-header-inner">
-               <a href="#trail-search">Trail Search </a>
-            </div>
-            <div class="app-header-inner">
-              <a href="#widget">Trail Widget</a> 
-            </div>
-        </div>
-      </nav>
-   </header>-->
+   </header>
+
     <br>
 
-<section id="trail-search">
-    <h1>Hiking App⛰️</h1>
-    <h3>Search for hiking trails!🍂</h3>
-    <div class="div-standard"> 
+    <section id="trail-search">
+       <h1>Hiking App⛰️</h1>
+         <h3>Search for hiking trails!🍂</h3>
+      <div class="div-standard"> 
         <form action="#">
             <label for="input-city">City:</label>
         <input type="text" name="input-city" id="input-city" placeholder="Portland🏘️">
@@ -40,44 +31,47 @@
             <label for="search-distance">Search for trails within (miles):</label><br>
         <input type="number" name='search-distance' id="search-distance" max="200" value="10" >
             <br>
+            <!--
             <label for="radio">Sort By:</label>
         <input type="radio" name="sort" id="sort" value="distance">
             <label for="distance">Distance</label>
         <input type="radio" name="sort" id="sort" value="rating">
-            <label for="rating">Hiking Rating</label>     
+            <label for="rating">Hiking Rating</label> -->
         <input type="submit" name="submit-button" id="submit-button" value="Search">
         </form>
-    </div>
+      </div>
 
-</section>
+    </section>
+ 
+  <br>
+ 
+    <!--Widget Map gets appended to here from Javascript-->
+    <section class="widget hidden">
+        <div>
+            <h3>Trail Map 🧭</h3> 
+            <p>If on mobile device: switch to landscape view</p>
+            <div style="text-align: center;">
+                <button type="button" id="other-trails-button">See Other Trails</button>
+              </div>
+            <div id="widget-map"></div>
+        </div>
+    </section>
 
-<br>
+  <br>
 
-<section class="results-section hidden" id="results-section">
+ <!--Hidden Results Until API Get Request-->
+ <section class="results-section hidden" id="results-section">
     <div class="div-standard" id="results-div">
-        <p>results section visible</p>
+       <p>results section visible</p>
     </div>
-</section>
+ </section>
 
-<section id="widget"> 
-    <h3>Trail Map 🧭</h3> 
-    <div id="widget-map">
-        <iframe style="width:100%; max-width:650px; max-height:410px; height:950px; flex-direction: row;" frameborder="0" scrolling="no" 
-        src="https://www.hikingproject.com/widget?v=3&map=1&type=trail&id=7023026&x=-10880707&y=3537936&z=6"></iframe>
-    </div>
-</section>
-<br>
-    <footer>
+ <br>
+   <footer>
         <nav>
-            <div class="app-header-outer">
-                <div class="app-header-inner">
-                    <a href="#page-top">Top of App</a> 
-                  </div>
+            <div class="app-header-outer hidden">
                  <div class="app-header-inner">
-                    <a href="#trail-search">Trail Search </a>
-                 </div>
-                 <div class="app-header-inner">
-                   <a href="#widget">Trail Widget</a> 
+                    <a href="#trail-search">New Trail Search </a>
                  </div>
              </div>
            </nav>
