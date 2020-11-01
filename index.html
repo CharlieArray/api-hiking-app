@@ -3,7 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hiking App</title>
+    <title>The Trail Finder App ⛰️</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
     <link rel="stylesheet" href="index.css" type="text/css">
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Architects+Daughter&family=Ubuntu:wght@500&display=swap" rel="stylesheet">    
     <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
@@ -17,9 +21,9 @@
 
     <br>
 
-    <section id="trail-search">
-       <h1>Hiking App⛰️</h1>
-         <h3>Search for hiking trails and trail maps!🍂</h3>
+    <section id="trail-search" class="center">
+       <h1>The Trail Finder⛰️</h1>
+         <h3>A Hiking App to Discover Nearby Trails and Trail Maps!🍂</h3>
       <div class="div-standard"> 
         <form action="#">
             <label for="input-city">City:</label>
@@ -47,7 +51,7 @@
   <br>
  
     <!--Widget Map gets appended to here from Javascript-->
-    <section class="widget hidden">
+    <section class="widget center hidden">
         <div>
             <h3>Trail Map 🧭</h3> 
             <p><b>⚠️To view map on mobile, change screen to landscape view</b></p>
@@ -61,7 +65,7 @@
   <br>
 
  <!--Hidden Results Until API Get Request-->
- <section class="results-section hidden" id="results-section">
+ <section class="results-section center hidden" id="results-section">
     <div class="div-standard" id="results-div">
        <p>results section visible</p>
     </div>
@@ -70,7 +74,7 @@
  <br>
    <footer>
         <nav>
-            <div class="app-header-outer hidden">
+            <div class="app-header-outer center hidden">
                  <div class="app-header-inner">
                     <a href="#trail-search">New Trail Search </a>
                  </div>

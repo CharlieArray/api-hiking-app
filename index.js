@@ -11,12 +11,10 @@ function displayResults(data){
 
     $('#results-section').removeClass('hidden');
 
-    console.log("displayResults function initiated");
-
+    //console.log("displayResults function initiated");
     //console.log(data);
 
     dataOutput = [];
-    dataOutputNoPics = [] 
 
     //for loop through data object to get properties of trail and push to HTML
     for (let i = 0; i < data.trails.length; i++){
@@ -75,23 +73,24 @@ function getResultsHike(geoCodeData, searchValue, sortValue){
     searchValue= $("#search-distance").val();
     sortValue= $("input[name=sort]:checked").val();
 
-    /* CONVERSION NOT CURRENTLY NECESSARY FOR MAP WIDGET APP TO FUNCTION*/
+
+  /*FUNCTION NOT CURRENTLY NECESSARY, DO NOT REMOVE */
+    function mapConversion(){
     // Formula to convert lat long to mercator for widget app
     //let xValue = longitude * 20037508.34 / 180;
     //let yValue = Math.log(Math.tan((90 + latitude) * Math.PI / 360)) / (Math.PI / 180);
     //yValue = yValue * 20037508.34 / 180;
     //console.log(xValue);
     //console.log(yValue);
-
-    /*function getWidgetData(xValue,yValue){
+    }
+      /*FUNCTION NOT CURRENTLY NECESSARY, DO NOT REMOVE */
+        function getWidgetData(xValue,yValue){
         //console.log("getWidgetData function initated")
         //console.log(latitude);
         //console.log(longitude);
     }
-    */
         
-    //getWidgetData(xValue, yValue);
-
+    //Hiking Project API URL and apiKey
     baseURL= 'https://www.hikingproject.com/data/get-trails'
     apiKey= '200958935-abaae354b1d3cf74fb6a5086bfdc19c6'
    
@@ -113,6 +112,7 @@ function getResultsHike(geoCodeData, searchValue, sortValue){
         .catch(console.error)
 
 }
+
 
 //Function to retrieve lat/long data from Google Geocode API
 function getResultsGeoCode(cityValue, stateValue){
@@ -164,7 +164,7 @@ function displayWidget(targetWidgetID){
 }
 
 
-
+// Hides Widget Map and Unhides other HTML sections
 function watchForOtherTrails(){
     $('#other-trails-button').on('click', event=>{
         event.preventDefault();
@@ -175,7 +175,7 @@ function watchForOtherTrails(){
     });
 }
 
-
+//Event Listener Function for "See Trail Map" 
 function watchForTrailWidget(){
     //console.log("watchTrail function ran");
     $("button[name = 'widget-button']").on('click', event=>{
@@ -183,7 +183,6 @@ function watchForTrailWidget(){
         //console.log("map widget clicked");
         let targetWidgetID = $(event.target).attr("id")
         displayWidget(targetWidgetID);
-    
     });
 }
 
@@ -219,27 +218,20 @@ function watchAlertBanner(){
 // Event Listener function for Submit Button
 function watchForm(){
     $('#submit-button').on('click', event=>{
-        
-    event.preventDefault();
-
-    //declaring form input values
-        //city input value
-        let cityValue= $("#input-city").val();
-        //state input value
-        let stateValue= $("#input-state").val();
-        //search distance parameter(miles) 
-        let searchValue= $("#search-distance").val();
-        //sort search option(distance or rating)
-        let sortValue= $("input[name=sort]:checked").val();
-
-    formValidate(cityValue,stateValue);
-
-    watchAlertBanner();
-
-    getResultsGeoCode(cityValue,stateValue);
-
-    getResultsHike(sortValue,searchValue);
-
+        event.preventDefault();
+         //declaring form input values
+            //city input value
+            let cityValue= $("#input-city").val();
+            //state input value
+            let stateValue= $("#input-state").val();
+            //search distance parameter(miles) 
+            let searchValue= $("#search-distance").val();
+            //sort search option(distance or rating)
+            let sortValue= $("input[name=sort]:checked").val();
+        formValidate(cityValue,stateValue);
+        watchAlertBanner();
+        getResultsGeoCode(cityValue,stateValue);
+        getResultsHike(sortValue,searchValue);
     });
 }
 
