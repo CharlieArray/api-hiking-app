@@ -9,8 +9,8 @@ https://charliearray.github.io/api-hiking-app/
 
 ![GitHub Logo](/images/trail-overview.JPG)
 
-![GitHub Logo](/images/map-overview.JPG)
-
 ![GitHub Logo](/images/results-overview.JPG)
+
+![GitHub Logo](/images/map-overview.JPG)
 
 
