@@ -40,7 +40,7 @@ function displayResults(data){
         $('#results-section').append(dataOutput);
 
     //Unhides footer nav at bottom of page
-    $('.app-header-outer').removeClass("hidden");
+    $('.app-footer-outer').removeClass("hidden");
 
     //Event Listener Function for button click on widget-button
     watchForTrailWidget();
@@ -114,21 +114,21 @@ function displayWidget(targetWidgetID){
     $(".widget").removeClass('hidden');
     $("#trail-search").addClass('hidden');
     $(".results-section").addClass('hidden');
-    $(".app-header-outer").addClass('hidden');
+    $(".app-footer-outer").addClass('hidden');
     $('#widget-map').empty();
    // If statement based on users media window size; small screen >> smaller map 
     var mq = window.matchMedia( "(max-width: 820px)" );
         if (mq.matches) {
             // window width is less than 820px
             $('#widget-map').append(
-                `<div class="center2"><iframe style="width:100%; max-width:569px; max-height:420px; height:345px; flex-direction: row;" frameborder="0" scrolling="no" 
+                `<div class="center2"><iframe style="width:100%; max-width:650px; width:570px; max-height:420px; height:345px; flex-direction: row;" frameborder="0" scrolling="no" 
                 src="https://www.hikingproject.com/widget?v=3&map=1&type=trail&id=${targetWidgetID}&x=-10880707&y=3537936&z=6"></iframe></div>`
                 );    
         }
         else {
             // window width is greater than 820px
             $('#widget-map').append(
-                `<div class="center"><iframe style="width:100%; max-width:810px; max-height:410px; height:750px; flex-direction: row;" frameborder="0" scrolling="no" 
+                `<div class="center3"><iframe style="width:100%; max-width:810px; max-height:410px; height:750px; flex-direction: row;" frameborder="0" scrolling="no" 
                 src="https://www.hikingproject.com/widget?v=3&map=1&type=trail&id=${targetWidgetID}&x=-10880707&y=3537936&z=6"></iframe></div>`
                 );    
         }
@@ -144,7 +144,7 @@ function watchForOtherTrails(){
         $(".widget").addClass('hidden');
         $("#trail-search").removeClass('hidden');
         $(".results-section").removeClass('hidden');
-        $(".app-header-outer").removeClass('hidden');
+        $(".app-footer-outer").removeClass('hidden');
     });
 }
 

@@ -10,9 +10,11 @@
         background-size: cover;
     }
 
-    /*Rules for Header Flexbox*/
-    .app-header-outer{
+    /*Rules for Footer Flexbox*/
+    .app-footer-outer{
         display: flex;
+        margin-left: 5%;
+        margin-right: 5%;
         font-family: 'Ubuntu', sans-serif;
         background-color: whitesmoke;
         opacity: .8;
@@ -21,8 +23,8 @@
         border: 4px solid #8bed7e
     }
 
-    /*Rules for Header Inner*/
-    .app-header-inner{
+    /*Rules for footer Inner*/
+    .app-footer-inner{
         background-color: whitesmoke;
         font-size: 16px;
         opacity: .8;
@@ -64,7 +66,9 @@
     /*Entire Section holding Appended Results*/
     .results-section{
         background-color: #8bed7e;
-        border: 2px, solid, black;
+        margin-left: 5%;
+        margin-right: 5%;
+        border: 2px solid black;
         opacity: .88;
         line-height: 17px;
     }
@@ -155,9 +159,11 @@
         background-size: cover;
     }
 
-    /*Rules for Header Flexbox*/
-    .app-header-outer{
+    /*Rules for Footer Flexbox*/
+    .app-footer-outer{
         display: flex;
+        margin-left: 5%;
+        margin-right: 5%;
         font-family: 'Ubuntu', sans-serif;
         background-color: whitesmoke;
         opacity: .8;
@@ -166,8 +172,8 @@
         border: 2px solid black
     }
 
-    /*Rules for Header Inner*/
-    .app-header-inner{
+    /*Rules for footer Inner*/
+    .app-footer-inner{
         background-color: whitesmoke;
         font-size: 16px;
         opacity: .8;
@@ -179,6 +185,14 @@
         width: 70%;
         padding: 2px;
       }
+
+    .center3{
+        display: flex;
+        justify-content: center;
+        margin-left: 4%;
+        margin-right: 4%;
+        width: 95%;
+    }
 
     /*Section ID for Trail Input Section*/
     #trail-search{
@@ -207,14 +221,16 @@
     /*Section Element holding Appended Results*/
     .results-section{
         background-color: #8bed7e;
-        border: 2px, solid, black;
+        border: 2px solid black;
         opacity: .90;
         line-height: 17px;
     }
 
     /*Entire Section containing widget*/
     .widget{
-        max-width: 1300px;
+        max-width: 1400px;
+        margin-left: 5%;
+        margin-right: 5%;
         background-color: #8bed7e;
         opacity: .90;
     }
