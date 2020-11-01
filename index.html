@@ -3,11 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Trail Finder App ⛰️</title>
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-    <link rel="manifest" href="/site.webmanifest">
+    <title>The Trail Finder App</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="images/android-chrome-192x192.png">
+    <link rel="manifest" href="images/site.webmanifest">
     <link rel="stylesheet" href="index.css" type="text/css">
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Architects+Daughter&family=Ubuntu:wght@500&display=swap" rel="stylesheet">    
     <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
@@ -20,28 +21,22 @@
     <br>
     <!--Form Input and Header-->
     <section id="trail-search" class="center">
-          <h1>The Trail Finder⛰️</h1>
-          <h2>A Hiking App to Discover Nearby Trails and Trail Maps!🍂</h2>
-        <div class="div-standard"> 
-            <form action="#">
-                    <label for="input-city">City:</label>
-                <input type="text" name="input-city" id="input-city" placeholder="Portland🏘️">
-                    <br>
-                    <label for="input-state">State:</label>
-                <input type="text" name="input-state" id="input-state" placeholder="Oregon⛰️">
-                    <br>
-                    <label for="search-distance">Search for trails within (miles):</label><br>
-                <input type="number" name='search-distance' id="search-distance" max="200" value="10" >
-                    <br>
-                    <!--
-                    <label for="radio">Sort By:</label>
-                <input type="radio" name="sort" id="sort" value="distance">
-                    <label for="distance">Distance</label>
-                <input type="radio" name="sort" id="sort" value="rating">
-                    <label for="rating">Hiking Rating</label> -->
-                <input type="submit" name="submit-button" id="submit-button" value="Search">
-            </form>
-        </div>
+        <h1>The Trail Finder⛰️</h1>
+        <h2>A Hiking App to Discover Nearby Trails and Trail Maps!🍂</h2>
+    <div class="div-standard"> 
+        <form action="#">
+                <label for="input-city">City:</label>
+            <input type="text" name="input-city" id="input-city" placeholder="Portland🏘️">
+                <br>
+                <label for="input-state">State:</label>
+            <input type="text" name="input-state" id="input-state" placeholder="Oregon⛰️">
+                <br>
+                <label for="search-distance">Search for trails within (miles):</label><br>
+            <input type="number" name='search-distance' id="search-distance" max="200" value="10" >
+                <br>
+            <input type="submit" name="submit-button" id="submit-button" value="Search">
+        </form>
+    </div>
     </section>
     
     <!--Widget Map gets appended to here from js file-->
@@ -50,7 +45,7 @@
             <h3>Trail Map 🧭</h3> 
             <p><b>⚠️To view map on mobile, change screen to landscape view</b></p>
             <div style="text-align: center;">
-                <button type="button" id="other-trails-button">See Other Trails🔎</button>
+              <button type="button" id="other-trails-button">See Other Trails🔎</button>
               </div>
             <div id="widget-map"></div>
         </div>
@@ -67,7 +62,7 @@
         <nav>
             <div class="app-header-outer center hidden">
                  <div class="app-header-inner">
-                    <a href="#trail-search">New Trail Search </a>
+                   <a href="#trail-search">Top of Page</a>
                  </div>
              </div>
            </nav>

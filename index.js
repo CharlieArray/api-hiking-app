@@ -13,9 +13,9 @@ function displayResults(data){
 
     dataOutput = [];
 
-    //for loop through data object to get properties of trail and push to HTML
+    //For loop through data object to get properties of trail and push to HTML
     for (let i = 0; i < data.trails.length; i++){
-        //if statement to prevent pushing data with no trail photo or very short trails
+        //If statement to prevent pushing data with no trail photo or very short trails
         if(data.trails[i].imgSmallMed.length !== 0 && data.trails[i].length > 0.3){
             dataOutput.push(
             `  <div class="results-hiking-element">
@@ -48,7 +48,7 @@ function displayResults(data){
 }
 
 
-//Formating function to get parameters in proper format for fetch request 
+//Formatting function to get parameters in proper format for fetch request 
 function formatQueryParams(params){
     const queryItems = Object.keys(params)
       .map(key => `${encodeURIComponent(key)}=${encodeURIComponent(params[key])}`)
@@ -116,7 +116,7 @@ function displayWidget(targetWidgetID){
     $(".results-section").addClass('hidden');
     $(".app-header-outer").addClass('hidden');
     $('#widget-map').empty();
-
+   // If statement based on users media window size; small screen >> smaller map 
     var mq = window.matchMedia( "(max-width: 820px)" );
         if (mq.matches) {
             // window width is less than 820px
@@ -137,7 +137,7 @@ function displayWidget(targetWidgetID){
 }
 
 
-// Hides Widget Map and Unhides other HTML sections
+//Event Listener: Hides Widget Map and Unhides other HTML sections
 function watchForOtherTrails(){
     $('#other-trails-button').on('click', event=>{
         event.preventDefault();
@@ -168,7 +168,7 @@ function formValidate(cityValue,stateValue){
     }
 }
 
-
+// Appends Alert Dialog on missing form fields
 function alertBanner(){
     $('form').addClass('hidden');
     $('#trail-search').append(`

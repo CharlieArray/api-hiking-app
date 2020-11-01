@@ -3,10 +3,11 @@
  @media all and (max-width: 670px) {
 
     body{
-        min-width: 308px;
-        margin-left: 5px;
-        margin-right: 5px;
-        background-image: url("images/leaves-vert.jpeg");
+        min-width: 305px;
+        margin-left: 3%;
+        margin-right: 3%;
+        background-image: url("images/leaves-vert-mobile.jpg");
+        background-size: cover;
     }
 
     /*Rules for Header Flexbox*/
@@ -36,6 +37,8 @@
     /*Section ID for Trail Input Section*/
     #trail-search{
         background-color: #8bed7e;
+        margin-left: 5%;
+        margin-right: 5%;
         opacity: .85;
         border: 2px solid black
     }
@@ -95,7 +98,7 @@
     }
 
     h2{
-        font-size: 24px;
+        font-size: 23px;
         line-height: 24px;
     }
 
@@ -148,7 +151,8 @@
     body{
         margin-left: 5%;
         margin-right: 5%;
-        background-image: url("images/leaves-vert.jpeg");
+        background-image: url("images/leaves-vert-desktop.jpeg");
+        background-size: cover;
     }
 
     /*Rules for Header Flexbox*/
