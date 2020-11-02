@@ -121,7 +121,7 @@ function displayWidget(targetWidgetID){
         if (mq.matches) {
             // window width is less than 820px
             $('#widget-map').append(
-                `<iframe style="width:100%; max-width:auto; min-width:550px; max-height:420px; height:345px; flex-direction: row;" frameborder="0" scrolling="no" 
+                `<iframe style="width:100%; max-width:auto; min-width:559px; max-height:420px; height:345px; flex-direction: row;" frameborder="0" scrolling="no" 
                 src="https://www.hikingproject.com/widget?v=3&map=1&type=trail&id=${targetWidgetID}&x=-10880707&y=3537936&z=6"></iframe></div>`
                 );    
         }
