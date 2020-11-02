@@ -121,14 +121,14 @@ function displayWidget(targetWidgetID){
         if (mq.matches) {
             // window width is less than 820px
             $('#widget-map').append(
-                `<div class="center2"><iframe style="width:100%; max-width:650px; width:570px; max-height:420px; height:345px; flex-direction: row;" frameborder="0" scrolling="no" 
+                `<iframe style="width:100%; max-width:auto; min-width:550px; max-height:420px; height:345px; flex-direction: row;" frameborder="0" scrolling="no" 
                 src="https://www.hikingproject.com/widget?v=3&map=1&type=trail&id=${targetWidgetID}&x=-10880707&y=3537936&z=6"></iframe></div>`
                 );    
         }
         else {
             // window width is greater than 820px
             $('#widget-map').append(
-                `<div class="center3"><iframe style="width:100%; max-width:810px; max-height:410px; height:750px; flex-direction: row;" frameborder="0" scrolling="no" 
+                `<iframe style="width:100%; max-width:auto; width:750px; max-height:410px; height:750px; flex-direction: row;" frameborder="0" scrolling="no" 
                 src="https://www.hikingproject.com/widget?v=3&map=1&type=trail&id=${targetWidgetID}&x=-10880707&y=3537936&z=6"></iframe></div>`
                 );    
         }
@@ -137,7 +137,7 @@ function displayWidget(targetWidgetID){
 }
 
 
-//Event Listener: Hides Widget Map and Unhides other HTML sections
+//Event Listener: Hides Widget Map and Unhides HTML sections)
 function watchForOtherTrails(){
     $('#other-trails-button').on('click', event=>{
         event.preventDefault();

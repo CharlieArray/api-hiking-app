@@ -4,8 +4,9 @@
 
     body{
         min-width: 305px;
-        margin-left: 3%;
-        margin-right: 3%;
+        margin-top: 3%;
+        margin-left: 1%;
+        margin-right: 1%;
         background-image: url("images/leaves-vert-mobile.jpg");
         background-size: cover;
     }
@@ -31,11 +32,25 @@
     }
 
     .center2 {
-        max-width: 750px;
         margin: auto;
         width: 100%;
         padding: 2px;
       }
+
+    .center3{
+        display: flex;
+        justify-content: center;
+        margin-left: 2%;
+        margin-right: 2%;
+        width: 95%;
+}
+
+    .center4{
+        margin: auto;
+        width: 97%;
+        padding: 2px;
+    }
+
     /*Section ID for Trail Input Section*/
     #trail-search{
         background-color: #8bed7e;
@@ -76,18 +91,21 @@
     /*Entire Section containing widget*/
     .widget{
         background-color: #8bed7e;
+        display: flex;
+        justify-content: center;
+        align-items: center;
         opacity: .90;
     }
 
     /*div holding widget map*/
     #widget-map{
-        padding: 1px;
-        margin-left: 1px;
-        margin-right: 1px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 
     img{
-        max-width: 285px;
+        max-width: 255px;
     }
 
     /*Header Rules*/
@@ -145,6 +163,9 @@
         display: none;
     }
 
+    .visibility-hidden{
+        visibility: hidden;
+    }
 }
 
 
@@ -153,8 +174,9 @@
 @media all and (min-width: 670px) {
   
     body{
-        margin-left: 5%;
-        margin-right: 5%;
+        margin-left: 4%;
+        margin-right: 4%;
+        margin-top: 3%;
         background-image: url("images/leaves-vert-desktop.jpeg");
         background-size: cover;
     }
@@ -179,7 +201,7 @@
         opacity: .8;
     }
 
-    .center {
+    .center{
         max-width: 700px;
         margin: auto;
         width: 70%;
@@ -192,6 +214,14 @@
         margin-left: 4%;
         margin-right: 4%;
         width: 95%;
+    }
+
+    .center4{
+        display: flex;
+        justify-content: center;
+        margin: auto;
+        width: 90%;
+        padding: 10px;
     }
 
     /*Section ID for Trail Input Section*/
@@ -238,8 +268,6 @@
     /*div holding widget map*/
     #widget-map{
         padding: 10px;
-        margin-left: 2%;
-        margin-right: 2%;
     }
 
     img{
@@ -295,6 +323,10 @@
 
     .hidden{
         display: none;
+    }
+
+    .visibility-hidden{
+        visibility: hidden;
     }
 
 }
