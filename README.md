@@ -4,7 +4,7 @@
 The Trail Finder hiking app allows users to retrieve hiking trail data based on a city/state search, and view a detailed map of the trail. 
 
 ### Technical Summary: 
-This is an asynchronous web app that makes GET data request to two API's and appends the results into the HTML using jQuery. 
+This is an asynchronous web app that makes GET data requests to two API's and appends the results into the HTML using jQuery. 
 ### The API's used are: 
 1. **Google Geocode API** - converts city/state data into a lat/long geographic coordinate position.
 
