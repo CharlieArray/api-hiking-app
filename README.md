@@ -3,6 +3,9 @@
 ## Summary: 
 The Trail Finder hiking app allows users to retrieve hiking trail data based on a city/state search, and view a detailed map of the trail. 
 
+### Link to view App:
+https://charliearray.github.io/api-hiking-app/
+
 ### Technical Summary: 
 This is an asynchronous web app that makes GET data requests to two API's and appends the results into the HTML using jQuery. 
 ### The API's used are: 
@@ -21,9 +24,6 @@ JavaScript/jQuery/HTML/CSS
 1. Implement an Autocomplete feature in the City/State input form for faster searches and avoid location misspelling
    Possible API > Google API: Autocomplete for Addresses and Search Terms
 2. Implement more robust image results of various locations.
-
-### Link to view App:
-https://charliearray.github.io/api-hiking-app/
 
 ![GitHub Logo](/images/trail-overview.JPG)
 
