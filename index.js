@@ -33,10 +33,9 @@ function displayResults(data){
             );
         }
     };
-
-    //Append hiking data results to App HTML
+    //Append header to data results
         $('#results-section').append(`<h3>Results for ${cityValue}, ${stateValue}🏕️:<br>${dataOutput.length} total hiking trails found</h3>`);
-
+    //Append hiking data results to HTML 
         $('#results-section').append(dataOutput);
 
     //Unhides footer nav at bottom of page
@@ -132,7 +131,7 @@ function displayWidget(targetWidgetID){
                 src="https://www.hikingproject.com/widget?v=3&map=1&type=trail&id=${targetWidgetID}&x=-10880707&y=3537936&z=6"></iframe></div>`
                 );    
         }
-
+    //Call event listener function to wait for event 
     watchForOtherTrails();
 }
 
@@ -149,7 +148,7 @@ function watchForOtherTrails(){
 }
 
 
-//Event Listener Function for "See Trail Map" 
+//Event Listener Function for "See Trail Map" button 
 function watchForTrailWidget(){
     //console.log("watchTrail function ran");
     $("button[name = 'widget-button']").on('click', event=>{
@@ -211,5 +210,4 @@ function watchForm(){
     });
 }
 
-watchForm();
-
+$(document).ready(watchForm());
