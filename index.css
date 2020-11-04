@@ -1,7 +1,5 @@
 /*--------CSS Rules for Devices under 600px phones etc--------*/ 
 
- @media all and (max-width: 670px) {
-
     body{
         min-width: 305px;
         margin-top: 3%;
@@ -21,12 +19,13 @@
         opacity: .8;
         flex-direction: row;
         justify-content: space-around;
-        border: 4px solid #8bed7e
+        border: 3px solid #000000
     }
 
     /*Rules for footer Inner*/
     .app-footer-inner{
         background-color: whitesmoke;
+        padding: 3px;
         font-size: 16px;
         opacity: .8;
     }
@@ -166,7 +165,6 @@
     .visibility-hidden{
         visibility: hidden;
     }
-}
 
 
 /*-------------------CSS Rules for Devices over 670px------------------------*/ 
@@ -178,27 +176,6 @@
         margin-right: 4%;
         margin-top: 3%;
         background-image: url("images/leaves-vert-desktop.jpeg");
-        background-size: cover;
-    }
-
-    /*Rules for Footer Flexbox*/
-    .app-footer-outer{
-        display: flex;
-        margin-left: 5%;
-        margin-right: 5%;
-        font-family: 'Ubuntu', sans-serif;
-        background-color: whitesmoke;
-        opacity: .8;
-        flex-direction: row;
-        justify-content: space-around;
-        border: 2px solid black
-    }
-
-    /*Rules for footer Inner*/
-    .app-footer-inner{
-        background-color: whitesmoke;
-        font-size: 16px;
-        opacity: .8;
     }
 
     .center{
@@ -209,11 +186,8 @@
       }
 
     .center3{
-        display: flex;
-        justify-content: center;
         margin-left: 4%;
         margin-right: 4%;
-        width: 95%;
     }
 
     .center4{
@@ -226,34 +200,20 @@
 
     /*Section ID for Trail Input Section*/
     #trail-search{
-        background-color: #8bed7e;
-        opacity: .85;
+        margin-left: auto;
+        margin-right: auto;
         border: 2px solid black
-    }
-
-    /*CSS Rule for Standard Divs*/
-    .div-standard{
-        border: 2px, solid, #8bed7e;
-
     }
 
     /*CSS Rules for Appended Results*/
     .results-hiking-element{
-        background-color: #8bed7e;
-        opacity: .88;
         margin-left: 4%;
         margin-right: 4%;
-        font-family: Arial, Helvetica, sans-serif;
-        font-size: 13px;
-        font-weight: 500;
     }
 
     /*Section Element holding Appended Results*/
     .results-section{
-        background-color: #8bed7e;
-        border: 2px solid black;
         opacity: .90;
-        line-height: 17px;
     }
 
     /*Entire Section containing widget*/
@@ -274,13 +234,6 @@
         max-width: 320px;
     }
 
-    /*Header Rules*/
-    h1, h2, h3{
-        text-align: center;
-        font-family: 'Ubuntu', sans-serif;
-        padding: 5px;
-    }
-
     h1{
         font-size: 36px;
     }
@@ -295,31 +248,9 @@
         line-height: 24px;
     }
 
-    p{
-        font-family: Arial, sans-serif;
-        font-size: 13.2px;
-        text-align: center;
-    }
-
-    form{
-        display: block;
-        text-align: center;
-        margin-left: 7%;
-        margin-right: 7%;
-        line-height: 30px;
-        margin-bottom: 5%;
-    }
-
     label{
         font-family: 'Open Sans', sans-serif;
     }
-
-
-    /* psuedo classes style rules for hyperlinks*/
-    a:link    { color: black;  }
-    a:visited { color:   black;   }
-    a:hover   { color:  lightsalmon; }
-    a:active  { color:  black; }
 
     .hidden{
         display: none;
