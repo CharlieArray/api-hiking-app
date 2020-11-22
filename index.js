@@ -5,6 +5,8 @@ function displayResults(data){
     //Clears out previous results when user makes new search
     $('#results-section').empty();
 
+    $('#preloader').addClass('hidden')
+    
     let cityValue= $("#input-city").val();
     let stateValue= $("#input-state").val();
     sortValue= $("input[name=sort]:checked").val();
@@ -165,6 +167,7 @@ function formValidate(cityValue,stateValue){
     if(cityValue == "" || stateValue == ""){
     alertBanner();
     }
+    else $('#preloader').removeClass('hidden')
 }
 
 // Appends Alert Dialog on missing form fields
@@ -189,9 +192,9 @@ function watchAlertBanner(){
     });
 }
 
-
 // Event Listener function for Submit Button
 function watchForm(){
+
     $('#submit-button').on('click', event=>{
         event.preventDefault();
          //declaring form input values

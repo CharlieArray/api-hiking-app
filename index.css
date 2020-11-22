@@ -1,5 +1,4 @@
 /*--------CSS Rules for Devices under 600px phones etc--------*/ 
-
     body{
         min-width: 305px;
         margin-top: 3%;
@@ -49,6 +48,15 @@
         width: 97%;
         padding: 2px;
     }
+
+    .centerLoading{
+        display: flex;
+        justify-content: center;
+        margin: auto;
+        width: auto;
+        padding: 2%;
+    }
+
 
     /*Section ID for Trail Input Section*/
     #trail-search{
@@ -144,7 +152,7 @@
         margin-left: 7%;
         margin-right: 7%;
         line-height: 30px;
-        margin-bottom: 5%;
+        margin-bottom: 2%;
     }
 
     label{
