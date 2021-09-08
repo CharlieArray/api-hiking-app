@@ -1,0 +1,5 @@
+//Fix bug where if no city/state inputted, app will still return data 
+
+//Fix speed on loading (app background wallpaper biggest issue)
+
+//Improve styling

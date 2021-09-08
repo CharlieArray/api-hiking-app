@@ -4,15 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Trail Finder App</title>
+    <link rel="manifest" href="images/site.webmanifest">
+    <link rel="stylesheet" href="index.css" type="text/css">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Architects+Daughter&family=Ubuntu:wght@500&display=swap" rel="stylesheet">    
+        <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+            crossorigin="anonymous">
+        </script>
     <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
     <link rel="icon" type="image/png" sizes="192x192" href="images/android-chrome-192x192.png">
-    <link rel="manifest" href="images/site.webmanifest">
-    <link rel="stylesheet" href="index.css" type="text/css">
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Architects+Daughter&family=Ubuntu:wght@500&display=swap" rel="stylesheet">    
-    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
-    crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -36,7 +37,7 @@
                 <br>
             <input type="submit" name="submit-button" id="submit-button" value="Search">
         </form>
-        <img id="preloader" src="images/loading.gif" class="centerLoading hidden" alt='loading gif'>
+        <img id="loadingicon" src="images/loading.gif" class="centerLoading hidden" alt='loading gif'>
     </div>
     </section>
     
@@ -46,8 +47,8 @@
         <div class="">
             <h3>Trail Map 🧭</h3> 
             <p><b>⚠️To view map on mobile, rotate screen to landscape view</b></p>
-            <div style="text-align: center;">
-              <button type="button" id="other-trails-button">See Other Trails🔎</button>
+              <div style="text-align: center;">
+                <button type="button" id="other-trails-button">See Other Trails🔎</button>
               </div>
             <div class="center4" id="widget-map"></div>
         </div>
@@ -56,7 +57,7 @@
     <!--Hidden Results Until API Get Request-->
     <section class="results-section center hidden" id="results-section">
         <div class="div-standard" id="results-div">
-        <p>results section visible</p>
+            <p>results section visible</p>
         </div>
     </section>
  <br>

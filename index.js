@@ -5,7 +5,7 @@ function displayResults(data){
     //Clears out previous results when user makes new search
     $('#results-section').empty();
 
-    $('#preloader').addClass('hidden')
+    $('#loadingicon').addClass('hidden')
     
     let cityValue= $("#input-city").val();
     let stateValue= $("#input-state").val();
@@ -70,12 +70,12 @@ function getResultsHike(geoCodeData, searchValue, sortValue){
     apiKey= '200958935-abaae354b1d3cf74fb6a5086bfdc19c6'
    
      const params = {
-      maxDistance: searchValue,
-      maxResults: 20,
-      sort: sortValue,
-      lat: latitude,
-      lon: longitude,
-      key: apiKey
+        maxDistance: searchValue,
+        maxResults: 20,
+        sort: sortValue,
+        lat: latitude,
+        lon: longitude,
+        key: apiKey
       };
   
     const queryString = formatQueryParams(params)
@@ -167,7 +167,7 @@ function formValidate(cityValue,stateValue){
     if(cityValue == "" || stateValue == ""){
     alertBanner();
     }
-    else $('#preloader').removeClass('hidden')
+    else $('#loadingicon').removeClass('hidden')
 }
 
 // Appends Alert Dialog on missing form fields
