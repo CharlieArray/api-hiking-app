@@ -9,6 +9,10 @@ function displayResults(data){
     
     let cityValue= $("#input-city").val();
     let stateValue= $("#input-state").val();
+
+    //if empty input values in search return/exit out of function
+    if(cityValue == "" || stateValue == "") return
+
     sortValue= $("input[name=sort]:checked").val();
 
     $('#results-section').removeClass('hidden');
